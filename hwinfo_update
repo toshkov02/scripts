@@ -1,0 +1,9 @@
+#!/bin/bash
+
+hwinfo_dir=/home/asmolin_local/hwinfo
+
+if [ -e /home/asmolin_local/hwinfo/hw32*.zip ] ; 
+then
+  cd ~/hwinfo && unzip $hwinfo_dir/hw32_*.zip && unzip $hwinfo_dir/hw64_*.zip && scp HWiNFO*  192.168.10.11:/mnt/backup/ISO/hwinfo/ && rm -v $hwinfo_dir/hw32_*.zip $hwinfo_dir/hw64_*.zip $hwinfo_dir/HWiNFO* && date +%d%m%y | mail -s "hwinfo updated" anton.smolin@start-el.ru;
+fi
+
